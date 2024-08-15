@@ -1,0 +1,53 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffafbd; /* Warm and colorful background */
+  background-image: linear-gradient(120deg, #ffafbd 0%, #ffc3a0 100%); /* Gradient for more color depth */
+}
+
+.banner {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  color: #8b0000; /* Darker color for text */
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  color: #a52a2a; /* Slightly lighter color for tagline */
+}
+
+.login-container, .register-container {
+  background-color: #8b0000; /* Darker matching color */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0; /* Space between the containers */
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2, .register-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container button, .register-container button {
+  background-color: #b22222; /* Darker button matching color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-container button:hover, .register-container button:hover {
+  background-color: #a52a2a; /* Slightly darker on hover */
+}

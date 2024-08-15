@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import Header from './components/Header';
+import TaskListPage from './pages/TaskListPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import TaskAddPage from './pages/TaskAddPage';
+import TaskEditPage from './pages/TaskEditPage';
+import TaskPage from './pages/TaskPage';
 import './App.css';
 
-function App() {
+const App = () => {
+  const location = useLocation(); // Get the current route
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Conditionally render the Header component */}
+      {location.pathname !== '/' && location.pathname !== '/login' && <Header />}
+      <Routes>
+        <Route path="/" element={<LoginPage />} /> {/* Set LoginPage as the home page */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/tasks" element={<TaskPage />} />
+        <Route path="/tasks/add" element={<TaskAddPage />} />
+        <Route path="/tasks/:id/edit" element={<TaskEditPage />} />
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

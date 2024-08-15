@@ -1,0 +1,60 @@
+.register-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333; /* Dark background */
+  }
+  
+  .phone-container {
+    background-color: burlywood; /* White background for the phone container */
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc; /* Simulate phone screen border */
+  }
+  
+  .phone-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .phone-container input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .phone-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .phone-container button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .login-button {
+    background-color: #007bff;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .phone-container button:hover {
+    opacity: 0.9;
+  }
+  
+  .phone-container p {
+    color: red;
+    margin-top: 10px;
+  }
+  
