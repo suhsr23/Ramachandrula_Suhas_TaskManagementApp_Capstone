@@ -1,6 +1,4 @@
-// backend/middleware/authMiddleware.js
-
-const asyncHandler = require('express-async-handler'); // Import asyncHandler
+const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
@@ -14,7 +12,7 @@ const protect = asyncHandler(async (req, res, next) => {
       req.user = await User.findById(decoded.id).select('-password');
       next();
     } catch (error) {
-      console.error('Token Verification Error:', error.message); // Add this line
+      console.error('Token Verification Error:', error.message); 
       res.status(401);
       throw new Error('Not authorized, token failed');
     }

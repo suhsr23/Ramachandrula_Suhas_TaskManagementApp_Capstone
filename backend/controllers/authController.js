@@ -1,6 +1,6 @@
-const asyncHandler = require('express-async-handler'); // Import asyncHandler
+const asyncHandler = require('express-async-handler');
 const generateToken = require('../utils/generateToken');
-const User = require('../models/userModel'); // Import the User model
+const User = require('../models/userModel'); 
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;

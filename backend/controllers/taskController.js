@@ -1,9 +1,7 @@
-// backend/controllers/taskController.js
-
 const asyncHandler = require('express-async-handler');
 const Task = require('../models/taskModel');
 
-// Create a new task
+
 exports.createTask = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
 
@@ -22,13 +20,12 @@ exports.createTask = asyncHandler(async (req, res) => {
   res.status(201).json(newTask);
 });
 
-// Get all tasks for the logged-in user
 exports.getTasks = asyncHandler(async (req, res) => {
   const tasks = await Task.find({ user: req.user.id });
   res.json(tasks);
 });
 
-// Get a single task by ID
+
 exports.getTaskById = asyncHandler(async (req, res) => {
   const task = await Task.findById(req.params.id);
 
@@ -40,7 +37,7 @@ exports.getTaskById = asyncHandler(async (req, res) => {
   res.json(task);
 });
 
-// Update an existing task
+
 exports.updateTask = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { title, description, isCompleted } = req.body;
@@ -60,7 +57,7 @@ exports.updateTask = asyncHandler(async (req, res) => {
   res.json(task);
 });
 
-// Delete a task
+
 exports.deleteTask = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
